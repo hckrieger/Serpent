@@ -1,0 +1,3 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Fonts/HUDFont.spritefont","C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/bin/DesktopGL/Fonts/HUDFont.xnb","FontDescriptionProcessor","SpriteFontContent",2008,21521,0.34537
+"C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Sprites/MainSprites.png","C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/bin/DesktopGL/Sprites/MainSprites.xnb","TextureProcessor","Texture2DContent",2043,147541,0.1921763
