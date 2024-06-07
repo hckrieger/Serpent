@@ -1,9 +1,11 @@
 ﻿using EC.Components.Render;
 using EC.CoreSystem;
 using EC.Services;
+using EC.Services.AssetManagers;
 using EC.Utilities;
 using EC.Utilities.Extensions;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
 using Serpent.Entities;
 using System;
@@ -20,7 +22,8 @@ namespace Serpent.Scenes
 		public enum GameState { Ready, Playing, GameOver, Win }
         public GameState currentGameState { get; set; }
 
-		private Keys[] directionKeys = new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down };
+		private Keys[] directionKeys = new Keys[] { Keys.Left, Keys.Right, Keys.Up, Keys.Down,
+													Keys.W, Keys.A, Keys.S, Keys.D};
 
 		private GridSpace[,] gridBoard;
 		private Entity gameBoardEntity;
@@ -39,10 +42,14 @@ namespace Serpent.Scenes
 		private InputManager inputManager;
 
 		private Entity status, score, title;
-
+		private float jingleDelayTimer;
+		private bool delaySong = false;
 		private string statusMessage;
+		private AudioAssetManager audioAssetManager;
+		private SoundEffect eatPelletSoundEffect;
+		
 
-        public PlayingScene(int width, Game game) : base(game)
+		public PlayingScene(int width, Game game) : base(game)
         {
 			this.width = width;
         }
@@ -83,19 +90,22 @@ namespace Serpent.Scenes
 
 			var foodRenderer = pellet.GetComponent<SpriteRenderer>();
 			foodRenderer.LayerDepth = .6f;
-			foodRenderer.SetSpriteFrame(14);
+			foodRenderer.SetSpriteFrame(4);
 
 			pelletSpawnLocations = new List<Point>();
 			RandomSpawnPellet();
 			AddEntity(pellet);
 
 			player.OnPositionChanged += HandlePlayerPositionChanged;
-			player.OnPelletRespawn += RandomSpawnPellet;
 			player.GameStateChanged += HandleGameStateChanged;
 
 			inputManager = Game.Services.GetService<InputManager>();	
+			audioAssetManager = Game.Services.GetService<AudioAssetManager>();
 
 			player.OnGameStateChanged(GameState.Ready);
+
+
+			audioAssetManager.PlayMusic("Audio/serpentJingle");
 		}
 
 		public override void Update(GameTime gameTime)
@@ -106,8 +116,11 @@ namespace Serpent.Scenes
 			{
 				foreach (var key in directionKeys)
 				{
-					if (inputManager.KeyJustPressed(key)) 
+					if (inputManager.KeyJustPressed(key))
+					{
 						player.OnGameStateChanged(GameState.Playing);
+						
+					}
 				}
 			}
 
@@ -119,6 +132,8 @@ namespace Serpent.Scenes
 				{
 					player.OnGameStateChanged(GameState.Ready);
 					player.Reset();
+					RandomSpawnPellet();
+					
 				}
 			}
 
@@ -129,23 +144,51 @@ namespace Serpent.Scenes
 
 			
 			score.GetComponent<TextRenderer>().Text = $"{player.SerpentBody.Count(m => m.IsActive)} / {GridWidth*GridHeight}";
+
+			
+			if (delaySong)
+			{
+				audioAssetManager.PauseMusic();
+				jingleDelayTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+
+				if (jingleDelayTimer < 0)
+				{
+					audioAssetManager.ResumeMusic();
+					delaySong = false;
+				}
+			}
+			
 		}
+
+
 
 		private void HandleGameStateChanged(object sender, PlayerEventArgs e)
 		{
 			switch (e.GameState)
 			{
 				case GameState.Ready:
+
 					currentGameState = GameState.Ready;
+					
 					break;
 				case GameState.Playing:
 					currentGameState = GameState.Playing;
+					
 					break;
 				case GameState.GameOver:
 					currentGameState = GameState.GameOver;
+					if (!delaySong)
+					{
+						audioAssetManager.PlaySoundEffect("Audio/lose");
+						jingleDelayTimer = (float)audioAssetManager.LoadSoundEffect("Audio/lose").Duration.TotalSeconds - 1;
+					}
+					delaySong = true;
 					break;
 				case GameState.Win:
 					currentGameState = GameState.Win;
+					audioAssetManager.PlaySoundEffect("Audio/win");
+					jingleDelayTimer = (float)audioAssetManager.LoadSoundEffect("Audio/win").Duration.TotalSeconds - 1;
+					delaySong = true;
 					break;
 
 			}
@@ -155,12 +198,16 @@ namespace Serpent.Scenes
 		}
 
 
+
+
+
 		private void HandlePlayerPositionChanged()
 		{
 			
 			if (player.SerpentHead.CurrentLocation == PositionToPoint(pellet.Transform.LocalPosition))
 			{
 				RandomSpawnPellet();
+				audioAssetManager.PlaySoundEffect("Audio/eatPellet");
 				player.AddBodyNextCycle = true;
 			}
 				

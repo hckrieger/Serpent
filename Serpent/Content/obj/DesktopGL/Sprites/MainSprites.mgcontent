@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Sprites/MainSprites.png</SourceFile>
-  <SourceTime>2024-03-24T18:36:35.94974-04:00</SourceTime>
+  <SourceTime>2024-06-06T19:19:46.8227795-04:00</SourceTime>
   <DestFile>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/bin/DesktopGL/Sprites/MainSprites.xnb</DestFile>
-  <DestTime>2024-03-27T18:35:20.8884354-04:00</DestTime>
+  <DestTime>2024-06-06T19:22:25.4407484-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

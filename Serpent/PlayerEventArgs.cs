@@ -1,4 +1,5 @@
-﻿using Serpent.Scenes;
+﻿using EC.Services.AssetManagers;
+using Serpent.Scenes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +11,10 @@ namespace Serpent
 	internal class PlayerEventArgs : EventArgs
 	{
 		public PlayingScene.GameState GameState { get; set; }
+		private AudioAssetManager audioAssetManager;
 
-		public string StastusMessage 
+
+        public string StastusMessage 
 		{
 			get
 			{
@@ -24,11 +27,12 @@ namespace Serpent
 					case PlayingScene.GameState.Win:
 						return "You win!\npress space to reset";
 					case PlayingScene.GameState.Ready:
-						return "Ready?\nmove with arrow keys";
+						return "Ready?\nmove with directional keys";
 					default:
 						return "";
 				}
 			}
 		}
+
 	}
 }

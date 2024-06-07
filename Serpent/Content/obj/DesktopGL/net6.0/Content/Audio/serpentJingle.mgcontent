@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Audio/serpentJingle.mp3</SourceFile>
+  <SourceTime>2024-06-05T19:11:18.554421-04:00</SourceTime>
+  <DestFile>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/bin/DesktopGL/Content/Audio/serpentJingle.xnb</DestFile>
+  <DestTime>2024-06-05T19:12:34.1569877-04:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2022-07-26T07:44:56-04:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/bin/DesktopGL/Content/Audio/serpentJingle.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>

@@ -9,6 +9,7 @@ namespace Serpent
 	public class Game1 : ExtendedGame
 	{
 		public const string PLAYING_SCENE = "PLAYING_SCENE";
+		public const string START_SCREEN = "START_SCREEN";
 		private readonly int width = 576;
 
 		public Game1()
@@ -23,9 +24,10 @@ namespace Serpent
 			base.Initialize();
 
 			ScaleResolutionToWindowSize(width, 480);
-
-			SceneManager.AddScene(PLAYING_SCENE, new PlayingScene(width, this));
-			SceneManager.ChangeScene(PLAYING_SCENE);
+			IsFullScreen = false;
+			SceneManager.AddScene(START_SCREEN, new StartScreen(width, this));
+		 	SceneManager.AddScene(PLAYING_SCENE, new PlayingScene(width, this));
+			SceneManager.ChangeScene(START_SCREEN);
 		}
 
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Audio/lose.wav</SourceFile>
+  <SourceTime>2024-05-27T12:55:06.371941-04:00</SourceTime>
+  <DestFile>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/bin/DesktopGL/Content/Audio/lose.xnb</DestFile>
+  <DestTime>2024-05-28T15:35:16.7673181-04:00</DestTime>
+  <Importer>WavImporter</Importer>
+  <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
+  <Processor>SoundEffectProcessor</Processor>
+  <ProcessorTime>2022-07-26T07:44:56-04:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

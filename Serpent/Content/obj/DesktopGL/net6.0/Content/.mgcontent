@@ -4,10 +4,22 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Audio/eatPellet.wav</File>
+    <File>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Audio/lose.wav</File>
+    <File>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Audio/serpentJingle.mp3</File>
+    <File>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Audio/win.wav</File>
+    <File>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Fonts/Credit.spritefont</File>
     <File>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Fonts/HUDFont.spritefont</File>
+    <File>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Fonts/Title.spritefont</File>
     <File>C:/Users/hunte/source/repos/MonoGame/games/Serpent/Serpent/Content/Sprites/MainSprites.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>

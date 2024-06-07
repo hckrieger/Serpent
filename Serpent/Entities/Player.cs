@@ -1,8 +1,11 @@
-﻿using EC.Components.Render;
+﻿using EC.Components;
+using EC.Components.Render;
 using EC.CoreSystem;
 using EC.Services;
+using EC.Services.AssetManagers;
 using EC.Utilities;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Input;
 using Serpent.Scenes;
 using System;
@@ -25,8 +28,8 @@ namespace Serpent.Entities
         }
 
 
-
-        private Direction currentDirection;
+		private readonly float[] angles = new float[4] { 0, MathHelper.PiOver2, MathHelper.Pi, 3 * MathHelper.PiOver2 };
+		private Direction currentDirection, nextDirection;
 
         public BodySection[] SerpentBody { get; set; }
         public BodySection SerpentHead { get; set; }
@@ -34,28 +37,33 @@ namespace Serpent.Entities
         private InputManager inputManager;
 
         private Func<Point, Vector2> pointToPosition;
-        private Direction directionForTimerDuration; 
 
         float timer, startTimer;
 
         public event Action OnPositionChanged;
-        public event Action OnPelletRespawn;
+
+        Vector2 centerOfSprite = new Vector2(24, 24);
 
         public bool AllowMovement { get; set; }
         private bool aboutToCrashInEdge = false;
         private GridData gridData;
 
-        private List<Point> gridLocationsThatAreOccupied;
+        //private List<Point> gridLocationsThatAreOccupied;
 
         public bool AddBodyNextCycle { get; set; } = false;
 
         public event EventHandler<PlayerEventArgs> GameStateChanged;
 
+        private AudioAssetManager audioAssetManager;
+        
         public Player(GridData gridData, Func<Point, Vector2> pointToPosition, Action<Entity> addEntity, Game game) : base(game)
         {
             //Pool up the serpent body sections to be activated when the tail grows
             SerpentBody = new BodySection[gridData.gridLength];
-            for (int i = 0; i < gridData.gridLength; i++)
+
+            
+
+			for (int i = 0; i < gridData.gridLength; i++)
             {
                 SerpentBody[i] = new BodySection(game);
                // SerpentBody[i].GetComponent<SpriteRenderer>().LayerDepth += .1f;
@@ -65,16 +73,22 @@ namespace Serpent.Entities
                 else //Activate the first body section to be used as the serpent head
                     SerpentHead = SerpentBody[i];
 
+               
+
+				SerpentBody[i].AddComponent(new Origin(centerOfSprite, SerpentBody[i]));
+
             }
 
             this.pointToPosition = pointToPosition;
             this.gridData = gridData;
 
+           
+
             //set the sprite frame, grid location and position in the gameworld. 
             SerpentHead.GetComponent<SpriteRenderer>().SetSpriteFrame(0);
             SerpentHead.CurrentLocation = new Point(3, 3);
             SerpentHead.GetComponent<SpriteRenderer>().LayerDepth = .8f;
-            SerpentHead.Transform.LocalPosition = pointToPosition(SerpentHead.CurrentLocation);
+            SerpentHead.Transform.LocalPosition = pointToPosition(SerpentHead.CurrentLocation)+centerOfSprite; 
 
         }
 
@@ -83,10 +97,13 @@ namespace Serpent.Entities
             base.Initialize();
 
             inputManager = Game.Services.GetService<InputManager>();
+            audioAssetManager = Game.Services.GetService<AudioAssetManager>();
 
-            gridLocationsThatAreOccupied = new List<Point>();
+            
 
-			timer = .35f;
+          //  gridLocationsThatAreOccupied = new List<Point>();
+
+			timer = .375f;
 			startTimer = timer;
 
 			Reset();
@@ -109,7 +126,7 @@ namespace Serpent.Entities
 
         }
 
-        public void OnGameStateChanged(PlayingScene.GameState state)
+        public void OnGameStateChanged(GameState state)
         {
             GameStateChanged.Invoke(this, new PlayerEventArgs { GameState = state });
         }
@@ -119,14 +136,14 @@ namespace Serpent.Entities
             
 
             //Set the pending direction of the snake based on input
-			if (directionForTimerDuration != Direction.Left && inputManager.KeyJustPressed(Keys.Right))
-                currentDirection = Direction.Right;
-            else if (directionForTimerDuration != Direction.Right && inputManager.KeyJustPressed(Keys.Left))
-                currentDirection = Direction.Left;
-            else if (directionForTimerDuration != Direction.Down && inputManager.KeyJustPressed(Keys.Up))
-                currentDirection = Direction.Up;
-            else if (directionForTimerDuration != Direction.Up && inputManager.KeyJustPressed(Keys.Down))
-                currentDirection = Direction.Down;
+			if (currentDirection != Direction.Left && (inputManager.KeyJustPressed(Keys.Right) || inputManager.KeyJustPressed(Keys.D)))
+                nextDirection = Direction.Right;
+            else if (currentDirection != Direction.Right && (inputManager.KeyJustPressed(Keys.Left) || inputManager.KeyJustPressed(Keys.A)))
+                nextDirection = Direction.Left;
+            else if (currentDirection != Direction.Down && (inputManager.KeyJustPressed(Keys.Up) || inputManager.KeyJustPressed(Keys.W)))
+                nextDirection = Direction.Up;
+            else if (currentDirection != Direction.Up && (inputManager.KeyJustPressed(Keys.Down) || inputManager.KeyJustPressed(Keys.S)))
+                nextDirection = Direction.Down;
 
 
 			
@@ -134,10 +151,10 @@ namespace Serpent.Entities
 
 
             //detect when the serpent head would be crashing into the edge if the movement timer ran down
-            if (currentDirection == Direction.Left && SerpentHead.CurrentLocation.X == 0 ||
-                currentDirection == Direction.Right && SerpentHead.CurrentLocation.X == gridData.gridWidth - 1 ||
-                currentDirection == Direction.Up && SerpentHead.CurrentLocation.Y == 0 ||
-                currentDirection == Direction.Down && SerpentHead.CurrentLocation.Y == gridData.gridHeight - 1)
+            if (nextDirection == Direction.Left && SerpentHead.CurrentLocation.X == 0 ||
+                nextDirection == Direction.Right && SerpentHead.CurrentLocation.X == gridData.gridWidth - 1 ||
+                nextDirection == Direction.Up && SerpentHead.CurrentLocation.Y == 0 ||
+                nextDirection == Direction.Down && SerpentHead.CurrentLocation.Y == gridData.gridHeight - 1)
                 aboutToCrashInEdge = true;
             else
                 aboutToCrashInEdge = false;
@@ -145,7 +162,7 @@ namespace Serpent.Entities
 
             //set the relative location based on the input
             Point relativeLocation = new Point(0, 0);
-            switch (currentDirection)
+            switch (nextDirection)
             {
                 case Direction.Up:
                     relativeLocation = new Point(0, -1);
@@ -174,7 +191,7 @@ namespace Serpent.Entities
       
 
             //when the timer runs out...
-            if (timer <= 0 && currentDirection != Direction.None)
+            if (timer <= 0 && nextDirection != Direction.None)
             {
                 if (aboutToCrashInEdge)
                 {
@@ -185,10 +202,27 @@ namespace Serpent.Entities
 				}
                     
 
-				directionForTimerDuration = currentDirection;
+				//directionForTimerDuration = currentDirection;
+
+				switch (nextDirection)
+				{
+					case Direction.Up:
+						SetSpriteFrame(0, 0, angles[2]);
+						break;
+					case Direction.Down:
+						SetSpriteFrame(0, 0, angles[0]);
+						break;
+					case Direction.Left:
+						SetSpriteFrame(0, 0, angles[1]);
+						break;
+					case Direction.Right:
+						SetSpriteFrame(0, 0, angles[3]);
+						break;
+
+				}
 
 
-                //grow the serpent body and respawn pellet
+				//grow the serpent body and respawn pellet
 				if (AddBodyNextCycle)
                 {
 					//OnPelletRespawn.Invoke();
@@ -199,23 +233,7 @@ namespace Serpent.Entities
                     AddBodyNextCycle = false;
                 }
 
-                //Set sprite frame of the serpent head based on it's direction deterined by input
-				switch (currentDirection)
-				{
-					case Direction.Up:
-						SetSpriteFrame(0, 0);
-						break;
-					case Direction.Down:
-						SetSpriteFrame(0, 2);
-						break;
-					case Direction.Left:
-						SetSpriteFrame(0, 3);
-						break;
-					case Direction.Right:
-						SetSpriteFrame(0, 1);
-						break;
 
-				}
 
 				for (int i = 0; i < SerpentBody.Count(); i++)
                 {
@@ -236,7 +254,7 @@ namespace Serpent.Entities
                 
 
                 //convert the grid position to the vector position
-				SerpentHead.Transform.LocalPosition = pointToPosition(SerpentHead.CurrentLocation);
+				SerpentHead.Transform.LocalPosition = pointToPosition(SerpentHead.CurrentLocation)+centerOfSprite;
 
 				for (int i = 1; i < SerpentBody.Count(); i++)
 				{
@@ -245,18 +263,19 @@ namespace Serpent.Entities
                     {
 						//Move each section of the snake to the position of the next section down
 						SerpentBody[i].CurrentLocation = SerpentBody[i - 1].PreviousLocation;
-						SerpentBody[i].Transform.LocalPosition = pointToPosition(SerpentBody[i].CurrentLocation);
-                        gridLocationsThatAreOccupied.Add(SerpentBody[i].CurrentLocation);
+						SerpentBody[i].Transform.LocalPosition = pointToPosition(SerpentBody[i].CurrentLocation)+centerOfSprite;
 					}
                        
                     else
                         break;
 				}
 
+                
+
 				OnPositionChanged.Invoke();
+				currentDirection = nextDirection;
 
-
-                //Set the sprite of the body section based on it's location in the body
+				//Set the sprite of the body section based on it's location in the body
 				for (int i = 1; i < SerpentBody.Count(); i++)
 				{
                     if (SerpentBody[i].IsActive)
@@ -273,7 +292,7 @@ namespace Serpent.Entities
                     
 				}
 
-                gridLocationsThatAreOccupied.Clear();
+               // gridLocationsThatAreOccupied.Clear();
 
                 //reset movement timer
 				timer = startTimer;
@@ -296,9 +315,10 @@ namespace Serpent.Entities
 
 		}
 
-		void SetSpriteFrame(int bodySprite, int spriteIndex)
+		void SetSpriteFrame(int bodySprite, int spriteIndex, float rotation)
 		{
 			SerpentBody[bodySprite].GetComponent<SpriteRenderer>().SetSpriteFrame(spriteIndex);
+            SerpentBody[bodySprite].Transform.LocalRotation = rotation;
 		}
 
 
@@ -343,29 +363,47 @@ namespace Serpent.Entities
 
             }
 
+            
 
-            if (BodyOnlyExistsAtPreviousLocations(new Point(1, 0)))
-                SetSpriteFrame(index, 10);
+			//Set sprite frame of the serpent head based on it's direction deterined by input
+            var isEvenIndex = index % 2 == 0;
+            var isOddIndex = index % 2 == 1;
+
+
+			if (BodyOnlyExistsAtPreviousLocations(new Point(1, 0)))
+				SetSpriteFrame(index, 3, angles[3]);
             else if (BodyOnlyExistsAtPreviousLocations(new Point(-1, 0)))
-                SetSpriteFrame(index, 11);
+                SetSpriteFrame(index, 3, angles[1]);
             else if (BodyOnlyExistsAtPreviousLocations(new Point(0, 1)))
-                SetSpriteFrame(index, 8);
+                SetSpriteFrame(index, 3, angles[0]);
             else if (BodyOnlyExistsAtPreviousLocations(new Point(0, -1)))
-                SetSpriteFrame(index, 9);
-            else if (BodiesExistAtNearbyLocations(new Point(-1, 0), new Point(1, 0)))
-                SetSpriteFrame(index, 13);
-            else if (BodiesExistAtNearbyLocations(new Point(-1, 0), new Point(0, -1)))
-                SetSpriteFrame(index, 7);
-            else if (BodiesExistAtNearbyLocations(new Point(-1, 0), new Point(0, 1)))
-                SetSpriteFrame(index, 6);
-            else if (BodiesExistAtNearbyLocations(new Point(1, 0), new Point(0, -1)))
-                SetSpriteFrame(index, 4);
-            else if (BodiesExistAtNearbyLocations(new Point(1, 0), new Point(0, 1)))
-                SetSpriteFrame(index, 5);
-            else if (BodiesExistAtNearbyLocations(new Point(0, 1), new Point(0, -1)))
-                SetSpriteFrame(index, 12);
+                SetSpriteFrame(index, 3, angles[2]);
+            else if (BodiesExistAtNearbyLocations(new Point(-1, 0), new Point(1, 0)) && isEvenIndex)
+                SetSpriteFrame(index, 2, angles[1]);
+            else if (BodiesExistAtNearbyLocations(new Point(-1, 0), new Point(0, -1)) && isEvenIndex)
+				SetSpriteFrame(index, 1, angles[3]);
+            else if (BodiesExistAtNearbyLocations(new Point(-1, 0), new Point(0, 1)) && isEvenIndex)
+                SetSpriteFrame(index, 1, angles[2]);
+            else if (BodiesExistAtNearbyLocations(new Point(1, 0), new Point(0, -1)) && isEvenIndex)
+                SetSpriteFrame(index, 1, angles[0]);
+            else if (BodiesExistAtNearbyLocations(new Point(1, 0), new Point(0, 1)) && isEvenIndex)
+                SetSpriteFrame(index, 1, angles[1]);
+            else if (BodiesExistAtNearbyLocations(new Point(0, 1), new Point(0, -1)) && isEvenIndex)
+                SetSpriteFrame(index, 2, angles[0]);
+			else if (BodiesExistAtNearbyLocations(new Point(-1, 0), new Point(1, 0)) && isOddIndex)
+				SetSpriteFrame(index, 6, angles[1]);
+			else if (BodiesExistAtNearbyLocations(new Point(-1, 0), new Point(0, -1)) && isOddIndex)
+				SetSpriteFrame(index, 5, angles[3]);
+			else if (BodiesExistAtNearbyLocations(new Point(-1, 0), new Point(0, 1)) && isOddIndex)
+				SetSpriteFrame(index, 5, angles[2]);
+			else if (BodiesExistAtNearbyLocations(new Point(1, 0), new Point(0, -1)) && isOddIndex)
+				SetSpriteFrame(index, 5, angles[0]);
+			else if (BodiesExistAtNearbyLocations(new Point(1, 0), new Point(0, 1)) && isOddIndex)
+				SetSpriteFrame(index, 5, angles[1]);
+			else if (BodiesExistAtNearbyLocations(new Point(0, 1), new Point(0, -1)) && isOddIndex)
+				SetSpriteFrame(index, 6, angles[0]);
 
-        }
+		}
 
         public override void Reset()
         {
@@ -376,7 +414,7 @@ namespace Serpent.Entities
 
 
 			currentDirection = Direction.None;
-            directionForTimerDuration = currentDirection;
+            nextDirection = currentDirection;
             timer = 0;
 		}
 
