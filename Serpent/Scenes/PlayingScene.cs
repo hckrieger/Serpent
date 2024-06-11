@@ -44,9 +44,7 @@ namespace Serpent.Scenes
 		private Entity status, score, title;
 		private float jingleDelayTimer;
 		private bool delaySong = false;
-		private string statusMessage;
 		private AudioAssetManager audioAssetManager;
-		private SoundEffect eatPelletSoundEffect;
 		
 
 		public PlayingScene(int width, Game game) : base(game)
@@ -106,25 +104,28 @@ namespace Serpent.Scenes
 
 
 			audioAssetManager.PlayMusic("Audio/serpentJingle");
+
+			
 		}
 
 		public override void Update(GameTime gameTime)
 		{
+			//RemoveEntity(title);
 			base.Update(gameTime);
+			
 
+			//If the player hits a directional key when read then change to playing game state
 			if (currentGameState == GameState.Ready) 
 			{
 				foreach (var key in directionKeys)
 				{
 					if (inputManager.KeyJustPressed(key))
-					{
 						player.OnGameStateChanged(GameState.Playing);
-						
-					}
 				}
 			}
 
 
+			//If game over or a win then allow to press space to reset the snake and set to ready.
 			if (currentGameState == GameState.GameOver ||
 				currentGameState == GameState.Win)
 			{
@@ -137,15 +138,20 @@ namespace Serpent.Scenes
 				}
 			}
 
+
+			//If the game state is playing then communicate to the player object to allow movement
 			if (currentGameState == GameState.Playing)
 				player.AllowMovement = true;
 			else 
 				player.AllowMovement = false;
 
 			
-			score.GetComponent<TextRenderer>().Text = $"{player.SerpentBody.Count(m => m.IsActive)} / {GridWidth*GridHeight}";
+			//Set the score based on the number of active sections of the serpent to the number of grid areas that could be covered
+			
+				score.GetComponent<TextRenderer>().Text = $"{player.SerpentBody.Count(m => m.IsActive)} / {GridWidth*GridHeight}";
 
 			
+			//After a win or a loss pause the music and resume it when the win/loss jingle is finished.
 			if (delaySong)
 			{
 				audioAssetManager.PauseMusic();
@@ -161,7 +167,7 @@ namespace Serpent.Scenes
 		}
 
 
-
+		//set game states  and the audio details of the jingle when won/loss
 		private void HandleGameStateChanged(object sender, PlayerEventArgs e)
 		{
 			switch (e.GameState)
@@ -180,19 +186,20 @@ namespace Serpent.Scenes
 					if (!delaySong)
 					{
 						audioAssetManager.PlaySoundEffect("Audio/lose");
-						jingleDelayTimer = (float)audioAssetManager.LoadSoundEffect("Audio/lose").Duration.TotalSeconds - 1;
+						jingleDelayTimer = (float)audioAssetManager.LoadSoundEffect("Audio/lose").Duration.TotalSeconds + .5f;
 					}
 					delaySong = true;
 					break;
 				case GameState.Win:
 					currentGameState = GameState.Win;
 					audioAssetManager.PlaySoundEffect("Audio/win");
-					jingleDelayTimer = (float)audioAssetManager.LoadSoundEffect("Audio/win").Duration.TotalSeconds - 1;
+					jingleDelayTimer = (float)audioAssetManager.LoadSoundEffect("Audio/win").Duration.TotalSeconds + .5f;
 					delaySong = true;
 					break;
 
 			}
 
+			//Provide a message through the PlayerEvent Args and set the message position
 			status.GetComponent<TextRenderer>().Text = e.StastusMessage;
 			status.Transform.LocalPosition = new Vector2(width / 2, 24);
 		}
@@ -200,7 +207,8 @@ namespace Serpent.Scenes
 
 
 
-
+		//Invoked when the player moves from the player object and then processes information when the serpent head lands on a pellet.
+		//Will then respawn pellet at random avilable location, play sound effect, and communicate to the player object that it's set to add to the body in the next cycle
 		private void HandlePlayerPositionChanged()
 		{
 			
@@ -213,6 +221,8 @@ namespace Serpent.Scenes
 				
 		}
 
+
+		//Initializes the grid 
 		private void GameBoardInitialize()
 		{
 			
@@ -232,6 +242,8 @@ namespace Serpent.Scenes
 			}
 		}
 
+
+		//Method that contains logic for respawning pellet at a random area that is open
 		private void RandomSpawnPellet()
 		{
 
@@ -271,13 +283,15 @@ namespace Serpent.Scenes
 			
 
 		
-
+		//Converts the point on a grid to a Vector position
 		private Vector2 PointToPosition(Point point)
 		{
 			var index = MathUtils.GridPointToIndex(point, GridWidth);
 			return positions[index];
 		}
 
+
+		//Converts a vector position to a point location 
 		private Point PositionToPoint(Vector2 position)
 		{
 			var index = positions.IndexOf(position);

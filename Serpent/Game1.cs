@@ -26,7 +26,7 @@ namespace Serpent
 			ScaleResolutionToWindowSize(width, 480);
 			IsFullScreen = false;
 			SceneManager.AddScene(START_SCREEN, new StartScreen(width, this));
-		 	SceneManager.AddScene(PLAYING_SCENE, new PlayingScene(width, this));
+			SceneManager.AddScene(PLAYING_SCENE, new PlayingScene(width, this));
 			SceneManager.ChangeScene(START_SCREEN);
 		}
 

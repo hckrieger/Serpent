@@ -3,17 +3,92 @@
   "WorkspaceRootPath": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\coresystem\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\serpent\\scenes\\playingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|solutionrelative:serpent\\scenes\\playingscene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\services\\inputmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\serpent\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|solutionrelative:serpent\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\coresystem\\scene.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|c:\\users\\hunte\\source\\repos\\monogame\\games\\serpent\\serpent\\scenes\\startscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|solutionrelative:serpent\\scenes\\startscreen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hunte\\AppData\\Local\\Temp\\.vsdbgsrc\\e42b228070f085b30f10511a8cf450bd88b6fed02967703bb697d8a92b91ffab\\ContentReader.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\coresystem\\entity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\components\\render\\spriterenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\services\\displaymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\serpent\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|solutionrelative:serpent\\game1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\services\\scenemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\services\\assetmanagers\\graphicsassetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\services\\rendermanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\components\\render\\texturerenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hunte\\AppData\\Local\\Temp\\.vsdbgsrc\\cb7c3a13a2672326b048ceffd78a1764a87682ceb6118ac03b3ae71a15dcbb68\\Game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\components\\render\\renderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hunte\\AppData\\Local\\SourceServer\\2cf7050d4f3543826c33d2c5e227416af5469f4b9c8edf6bfe10ce367ebf5ee4\\src\\libraries\\System.Private.CoreLib\\src\\System\\Array.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\components\\render\\textrenderer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\components\\render\\spritesheet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\serpent\\entities\\gridspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|solutionrelative:serpent\\entities\\gridspace.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\services\\assetmanagers\\audioassetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\utilities\\mathutils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\utilities\\extensions\\entityextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\serpent\\entities\\bodysection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|solutionrelative:serpent\\entities\\bodysection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\serpent\\serpent.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|solutionrelative:serpent\\serpent.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|c:\\users\\hunte\\source\\repos\\monogame\\games\\serpent\\serpent\\serpent.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "AbsoluteMoniker": "D:0:0:{E099BD63-8517-4B90-8218-E7D3628EE220}|..\\..\\libraries\\EC\\EC.csproj|c:\\users\\hunte\\source\\repos\\monogame\\libraries\\ec\\extendedgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\serpent\\serpent.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{9CC3BA50-5B81-44EA-A4D9-16EACF816A5A}|Serpent\\Serpent.csproj|solutionrelative:serpent\\serpent.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
@@ -24,37 +99,336 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Scene.cs",
-              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\CoreSystem\\Scene.cs",
-              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\CoreSystem\\Scene.cs",
-              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\CoreSystem\\Scene.cs",
-              "RelativeToolTip": "..\\..\\libraries\\EC\\CoreSystem\\Scene.cs",
-              "ViewState": "AQIAAHQAAAAAAAAAAAAAwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-07T02:46:06.763Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "Entity.cs",
               "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\CoreSystem\\Entity.cs",
               "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\CoreSystem\\Entity.cs",
               "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\CoreSystem\\Entity.cs",
               "RelativeToolTip": "..\\..\\libraries\\EC\\CoreSystem\\Entity.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAIwAAAAAAAAAAA",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAAwE0AAAALAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-07T02:45:50.398Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Scene.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\CoreSystem\\Scene.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\CoreSystem\\Scene.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\CoreSystem\\Scene.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\CoreSystem\\Scene.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAmwFEAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-07T02:46:06.763Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InputManager.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\InputManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Services\\InputManager.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\InputManager.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Services\\InputManager.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T14:32:08.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ContentReader.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\AppData\\Local\\Temp\\.vsdbgsrc\\e42b228070f085b30f10511a8cf450bd88b6fed02967703bb697d8a92b91ffab\\ContentReader.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\e42b228070f085b30f10511a8cf450bd88b6fed02967703bb697d8a92b91ffab\\ContentReader.cs",
+              "ToolTip": "C:\\Users\\hunte\\AppData\\Local\\Temp\\.vsdbgsrc\\e42b228070f085b30f10511a8cf450bd88b6fed02967703bb697d8a92b91ffab\\ContentReader.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\e42b228070f085b30f10511a8cf450bd88b6fed02967703bb697d8a92b91ffab\\ContentReader.cs [Read Only]",
+              "ViewState": "AQIAAHsAAAAAAAAAAADwv5wAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-11T14:09:56.162Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\AppData\\Local\\Temp\\.vsdbgsrc\\cb7c3a13a2672326b048ceffd78a1764a87682ceb6118ac03b3ae71a15dcbb68\\Game.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\cb7c3a13a2672326b048ceffd78a1764a87682ceb6118ac03b3ae71a15dcbb68\\Game.cs",
+              "ToolTip": "C:\\Users\\hunte\\AppData\\Local\\Temp\\.vsdbgsrc\\cb7c3a13a2672326b048ceffd78a1764a87682ceb6118ac03b3ae71a15dcbb68\\Game.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\cb7c3a13a2672326b048ceffd78a1764a87682ceb6118ac03b3ae71a15dcbb68\\Game.cs [Read Only]",
+              "ViewState": "AQIAAFYDAAAAAAAAAAAiwGsDAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T18:23:07.5Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "RenderManager.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\RenderManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Services\\RenderManager.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\RenderManager.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Services\\RenderManager.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAgwC0AAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T19:02:35.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GraphicsAssetManager.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\AssetManagers\\GraphicsAssetManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Services\\AssetManagers\\GraphicsAssetManager.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\AssetManagers\\GraphicsAssetManager.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Services\\AssetManagers\\GraphicsAssetManager.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAowEIAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T18:04:06.926Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Player.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Entities\\Player.cs",
+              "RelativeDocumentMoniker": "Serpent\\Entities\\Player.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Entities\\Player.cs",
+              "RelativeToolTip": "Serpent\\Entities\\Player.cs",
+              "ViewState": "AQIAAEoBAAAAAAAAAAAgwEIAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T15:53:47.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SceneManager.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\SceneManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Services\\SceneManager.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\SceneManager.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Services\\SceneManager.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T17:07:23.634Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Game1.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Game1.cs",
+              "RelativeDocumentMoniker": "Serpent\\Game1.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Game1.cs",
+              "RelativeToolTip": "Serpent\\Game1.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAiwBQAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T16:52:28.368Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DisplayManager.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\DisplayManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Services\\DisplayManager.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\DisplayManager.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Services\\DisplayManager.cs",
+              "ViewState": "AQIAAIcAAAAAAAAAAAAAAIgAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T20:15:57.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PlayingScene.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Scenes\\PlayingScene.cs",
+              "RelativeDocumentMoniker": "Serpent\\Scenes\\PlayingScene.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Scenes\\PlayingScene.cs",
+              "RelativeToolTip": "Serpent\\Scenes\\PlayingScene.cs",
+              "ViewState": "AQIAAIEAAAAAAAAAAAAmwB8AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T17:12:00.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "StartScreen.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Scenes\\StartScreen.cs",
+              "RelativeDocumentMoniker": "Serpent\\Scenes\\StartScreen.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Scenes\\StartScreen.cs",
+              "RelativeToolTip": "Serpent\\Scenes\\StartScreen.cs",
+              "ViewState": "AQIAADQAAAAAAAAAAAAgwF0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T16:20:44.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SpriteRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Components\\Render\\SpriteRenderer.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Components\\Render\\SpriteRenderer.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Components\\Render\\SpriteRenderer.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Components\\Render\\SpriteRenderer.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAswCUAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T19:03:54.83Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TextureRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Components\\Render\\TextureRenderer.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Components\\Render\\TextureRenderer.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Components\\Render\\TextureRenderer.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Components\\Render\\TextureRenderer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T18:59:16.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TextRenderer.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Components\\Render\\TextRenderer.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Components\\Render\\TextRenderer.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Components\\Render\\TextRenderer.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Components\\Render\\TextRenderer.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAowFsAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T18:21:26.001Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Renderer.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Components\\Render\\Renderer.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Components\\Render\\Renderer.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Components\\Render\\Renderer.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Components\\Render\\Renderer.cs",
+              "ViewState": "AQIAAD0AAAAAAAAAAAAcwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T19:50:56.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Array.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\AppData\\Local\\SourceServer\\2cf7050d4f3543826c33d2c5e227416af5469f4b9c8edf6bfe10ce367ebf5ee4\\src\\libraries\\System.Private.CoreLib\\src\\System\\Array.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\2cf7050d4f3543826c33d2c5e227416af5469f4b9c8edf6bfe10ce367ebf5ee4\\src\\libraries\\System.Private.CoreLib\\src\\System\\Array.cs",
+              "ToolTip": "C:\\Users\\hunte\\AppData\\Local\\SourceServer\\2cf7050d4f3543826c33d2c5e227416af5469f4b9c8edf6bfe10ce367ebf5ee4\\src\\libraries\\System.Private.CoreLib\\src\\System\\Array.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\AppData\\Local\\SourceServer\\2cf7050d4f3543826c33d2c5e227416af5469f4b9c8edf6bfe10ce367ebf5ee4\\src\\libraries\\System.Private.CoreLib\\src\\System\\Array.cs",
+              "ViewState": "AQIAAKUEAAAAAAAAAAAAALkEAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T18:55:52.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "SpriteSheet.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Components\\Render\\SpriteSheet.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Components\\Render\\SpriteSheet.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Components\\Render\\SpriteSheet.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Components\\Render\\SpriteSheet.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T19:51:13.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GridSpace.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Entities\\GridSpace.cs",
+              "RelativeDocumentMoniker": "Serpent\\Entities\\GridSpace.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Entities\\GridSpace.cs",
+              "RelativeToolTip": "Serpent\\Entities\\GridSpace.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T18:06:09.851Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AudioAssetManager.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\AssetManagers\\AudioAssetManager.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Services\\AssetManagers\\AudioAssetManager.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Services\\AssetManagers\\AudioAssetManager.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Services\\AssetManagers\\AudioAssetManager.cs",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAcwG8AAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T18:24:41.572Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "MathUtils.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Utilities\\MathUtils.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Utilities\\MathUtils.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Utilities\\MathUtils.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Utilities\\MathUtils.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T18:42:33.217Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "EntityExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Utilities\\Extensions\\EntityExtensions.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\Utilities\\Extensions\\EntityExtensions.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\Utilities\\Extensions\\EntityExtensions.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\Utilities\\Extensions\\EntityExtensions.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAYwCoAAABfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T18:42:45.176Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "BodySection.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Entities\\BodySection.cs",
+              "RelativeDocumentMoniker": "Serpent\\Entities\\BodySection.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Entities\\BodySection.cs",
+              "RelativeToolTip": "Serpent\\Entities\\BodySection.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-10T18:06:10.652Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "ExtendedGame.cs",
+              "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\ExtendedGame.cs",
+              "RelativeDocumentMoniker": "..\\..\\libraries\\EC\\ExtendedGame.cs",
+              "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\libraries\\EC\\ExtendedGame.cs",
+              "RelativeToolTip": "..\\..\\libraries\\EC\\ExtendedGame.cs",
+              "ViewState": "AQIAAGQAAAAAAAAAAAAcwHAAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T16:52:36.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "Serpent.csproj",
               "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Serpent.csproj",
               "RelativeDocumentMoniker": "Serpent\\Serpent.csproj",
@@ -62,20 +436,18 @@
               "RelativeToolTip": "Serpent\\Serpent.csproj",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-07T00:29:13.063Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T00:29:13.063Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 26,
               "Title": "Serpent",
               "DocumentMoniker": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Serpent.csproj",
               "RelativeDocumentMoniker": "Serpent\\Serpent.csproj",
               "ToolTip": "C:\\Users\\hunte\\source\\repos\\MonoGame\\games\\Serpent\\Serpent\\Serpent.csproj",
               "RelativeToolTip": "Serpent\\Serpent.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-06-07T00:27:05.985Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-07T00:27:05.985Z"
             }
           ]
         }

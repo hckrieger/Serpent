@@ -11,7 +11,6 @@ namespace Serpent
 	internal class PlayerEventArgs : EventArgs
 	{
 		public PlayingScene.GameState GameState { get; set; }
-		private AudioAssetManager audioAssetManager;
 
 
         public string StastusMessage 

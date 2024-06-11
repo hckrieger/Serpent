@@ -48,17 +48,13 @@ namespace Serpent.Entities
         private bool aboutToCrashInEdge = false;
         private GridData gridData;
 
-        //private List<Point> gridLocationsThatAreOccupied;
-
         public bool AddBodyNextCycle { get; set; } = false;
 
         public event EventHandler<PlayerEventArgs> GameStateChanged;
-
-        private AudioAssetManager audioAssetManager;
         
         public Player(GridData gridData, Func<Point, Vector2> pointToPosition, Action<Entity> addEntity, Game game) : base(game)
         {
-            //Pool up the serpent body sections to be activated when the tail grows
+            //Pool up the serpent body sections to be activated when the body grows
             SerpentBody = new BodySection[gridData.gridLength];
 
             
@@ -66,7 +62,7 @@ namespace Serpent.Entities
 			for (int i = 0; i < gridData.gridLength; i++)
             {
                 SerpentBody[i] = new BodySection(game);
-               // SerpentBody[i].GetComponent<SpriteRenderer>().LayerDepth += .1f;
+
                 addEntity(SerpentBody[i]);
                 if (i > 0)
                     SerpentBody[i].IsActive = false;
@@ -74,7 +70,7 @@ namespace Serpent.Entities
                     SerpentHead = SerpentBody[i];
 
                
-
+                //center the origin of the snake parts so that each sprite can rotate based on it's direction and location
 				SerpentBody[i].AddComponent(new Origin(centerOfSprite, SerpentBody[i]));
 
             }
@@ -88,16 +84,17 @@ namespace Serpent.Entities
             SerpentHead.GetComponent<SpriteRenderer>().SetSpriteFrame(0);
             SerpentHead.CurrentLocation = new Point(3, 3);
             SerpentHead.GetComponent<SpriteRenderer>().LayerDepth = .8f;
-            SerpentHead.Transform.LocalPosition = pointToPosition(SerpentHead.CurrentLocation)+centerOfSprite; 
+            SerpentHead.Transform.LocalPosition = pointToPosition(SerpentHead.CurrentLocation)+centerOfSprite;
 
-        }
+			inputManager = game.Services.GetService<InputManager>();
+
+		}
 
         public override void Initialize()
         {
             base.Initialize();
 
-            inputManager = Game.Services.GetService<InputManager>();
-            audioAssetManager = Game.Services.GetService<AudioAssetManager>();
+            
 
             
 
@@ -113,6 +110,8 @@ namespace Serpent.Entities
 
         public override void Update(GameTime gameTime)
         {
+
+            //If all the parts of the snake are active then change to win state
             if (SerpentBody.All(m => m.IsActive) && AllowMovement)
             {
 				OnGameStateChanged(GameState.Win);
@@ -122,15 +121,20 @@ namespace Serpent.Entities
 
             
             MoveSnake(gameTime);
+
 			base.Update(gameTime);
 
         }
 
+
+        //Method that makes it more readable to change game state by invoking an event
         public void OnGameStateChanged(GameState state)
         {
             GameStateChanged.Invoke(this, new PlayerEventArgs { GameState = state });
         }
 
+
+        //Method that deals with serpent movement
         private void MoveSnake(GameTime gameTime)
         {
             
@@ -151,6 +155,7 @@ namespace Serpent.Entities
 
 
             //detect when the serpent head would be crashing into the edge if the movement timer ran down
+            //This makes it so it can detect a loss without going out of bounds
             if (nextDirection == Direction.Left && SerpentHead.CurrentLocation.X == 0 ||
                 nextDirection == Direction.Right && SerpentHead.CurrentLocation.X == gridData.gridWidth - 1 ||
                 nextDirection == Direction.Up && SerpentHead.CurrentLocation.Y == 0 ||
@@ -160,7 +165,7 @@ namespace Serpent.Entities
                 aboutToCrashInEdge = false;
 
 
-            //set the relative location based on the input
+            //set the relative location based on the input direction
             Point relativeLocation = new Point(0, 0);
             switch (nextDirection)
             {
@@ -181,6 +186,7 @@ namespace Serpent.Entities
 
 
             //run the timer
+            //This bool is set in the PlayerScene class
             if (AllowMovement)
             {
 
@@ -193,6 +199,8 @@ namespace Serpent.Entities
             //when the timer runs out...
             if (timer <= 0 && nextDirection != Direction.None)
             {
+
+                //Chagne state to game over if it would crash into the boundry upon movement and return to halt movement
                 if (aboutToCrashInEdge)
                 {
 					OnGameStateChanged(PlayingScene.GameState.GameOver);
@@ -202,8 +210,7 @@ namespace Serpent.Entities
 				}
                     
 
-				//directionForTimerDuration = currentDirection;
-
+                //Set the sprite frame of the serpent head based on chosen direction
 				switch (nextDirection)
 				{
 					case Direction.Up:
@@ -225,7 +232,6 @@ namespace Serpent.Entities
 				//grow the serpent body and respawn pellet
 				if (AddBodyNextCycle)
                 {
-					//OnPelletRespawn.Invoke();
 
 					AddBody();
 
@@ -234,7 +240,7 @@ namespace Serpent.Entities
                 }
 
 
-
+                //Make the previous location of each part of the snake the current location before the current location changes to where it would move
 				for (int i = 0; i < SerpentBody.Count(); i++)
                 {
 					
@@ -248,7 +254,7 @@ namespace Serpent.Entities
 				}
 
                 
-                //Add the relative location to the current location for it to move to a desired adjacent area. 
+                //Add the relative location to the current location for the serpent head to move to a desired adjacent area. 
                 SerpentHead.CurrentLocation += relativeLocation;
 
                 
@@ -271,8 +277,9 @@ namespace Serpent.Entities
 				}
 
                 
-
+                //Invoke the the event method is the PlayingScene class that detects if there's a pellet to collide with in the new direction
 				OnPositionChanged.Invoke();
+
 				currentDirection = nextDirection;
 
 				//Set the sprite of the body section based on it's location in the body
@@ -284,7 +291,7 @@ namespace Serpent.Entities
                         if (SerpentHead.CurrentLocation == SerpentBody[i].CurrentLocation)
                             OnGameStateChanged(GameState.GameOver);
                         
-
+                        //see method that sets the sprites below
                         SetBodySprite(SerpentBody[i]);
                     }
                     else
@@ -292,7 +299,6 @@ namespace Serpent.Entities
                     
 				}
 
-               // gridLocationsThatAreOccupied.Clear();
 
                 //reset movement timer
 				timer = startTimer;
@@ -304,16 +310,18 @@ namespace Serpent.Entities
 
 		}
 
-
+        //Method adds body to snake by detecting the first inactive body in list
+        //and set's it to the position of the previous location of the last active body and activates it.
         public void AddBody()
         {
             var body = SerpentBody.First(m => !m.IsActive);
 			body.CurrentLocation = SerpentBody.Last(m => m.IsActive).PreviousLocation;
-            body.GetComponent<SpriteRenderer>().SetSpriteFrame(0);
             body.IsActive = true;
 
 
 		}
+
+
 
 		void SetSpriteFrame(int bodySprite, int spriteIndex, float rotation)
 		{
@@ -322,7 +330,7 @@ namespace Serpent.Entities
 		}
 
 
-        //Function that sets the sprite of the body based on it's position
+        //Function finds the location of each part of the snake body to determine what it's sprite frame should be
         public void SetBodySprite(BodySection bodySection)
         {
             
@@ -337,7 +345,8 @@ namespace Serpent.Entities
 			var previousBodyLocation = SerpentBody[index - 1].CurrentLocation;
 			var nextBodyLocation = SerpentBody[index + nextBodyNumber].CurrentLocation;
 
-
+    
+            //determines if there is a body at a chosen location one way.  Only relevent for the tail of the serpent.
 			bool BodyOnlyExistsAtPreviousLocations(Point previousRelativeLocation)
             {
                 if (nextBodyNumber == 0)
@@ -350,6 +359,8 @@ namespace Serpent.Entities
 
             }
 
+
+            //Determines if there are bodies and the chosen locations before and after the current body. 
             bool BodiesExistAtNearbyLocations(Point previousRelativeLocation, Point nextRelativeLocation)
             {
                 if (nextBodyNumber == 0)
@@ -365,11 +376,11 @@ namespace Serpent.Entities
 
             
 
-			//Set sprite frame of the serpent head based on it's direction deterined by input
             var isEvenIndex = index % 2 == 0;
             var isOddIndex = index % 2 == 1;
 
 
+            
 			if (BodyOnlyExistsAtPreviousLocations(new Point(1, 0)))
 				SetSpriteFrame(index, 3, angles[3]);
             else if (BodyOnlyExistsAtPreviousLocations(new Point(-1, 0)))

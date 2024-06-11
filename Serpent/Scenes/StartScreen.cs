@@ -2,6 +2,7 @@
 using EC.Components.Render;
 using EC.CoreSystem;
 using EC.Services;
+using EC.Services.AssetManagers;
 using EC.Utilities.Extensions;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -19,13 +20,17 @@ namespace Serpent.Scenes
 		private InputManager inputManager;
 		private SceneManager sceneManager;
 
-		Entity pressSpace;
+		Entity pressSpace, title, credit, snakeSprite;
 
 		float timer, startTimer;
 
+		private GraphicsAssetManager graphicsAssetManager;
+
+
+
         public StartScreen(int width, Game game) : base(game)
         {
-            Entity title = new Entity(game);
+            title = new Entity(game);
             title.LoadTextComponents("Fonts/Title", "Serpent", Color.Green, game, TextRenderer.Alignment.Center);
             title.Transform.LocalPosition = new Vector2(width / 2, 75);
             AddEntity(title);
@@ -35,7 +40,7 @@ namespace Serpent.Scenes
 			pressSpace.Transform.LocalPosition = new Vector2(width / 2, 380);
 			AddEntity(pressSpace);
 
-			Entity credit = new Entity(game);
+			credit = new Entity(game);
 			credit.LoadTextComponents("Fonts/Credit", "Krieger Interactive", Color.Green, game, TextRenderer.Alignment.Center);
 			credit.Transform.LocalPosition = new Vector2(width / 2, 450);
 			AddEntity(credit);
@@ -46,13 +51,17 @@ namespace Serpent.Scenes
 			timer = .8f;
 			startTimer = timer;
 
-			Entity snakeSprite = new Entity(game);
+			snakeSprite = new Entity(game);
 			snakeSprite.LoadSpriteComponents("Sprites/MainSprites", game, EntityExtensions.ColliderShape.None, new Point(48, 48));
 			snakeSprite.Transform.LocalScale = 2.5f;
 			snakeSprite.Transform.LocalPosition = new Vector2(width / 2, 240);
 			snakeSprite.AddComponent(new Origin(new Vector2(24, 24), snakeSprite));
 			AddEntity(snakeSprite);
+
 			
+
+			graphicsAssetManager = Game.Services.GetService<GraphicsAssetManager>();
+
 		}
 
 		public override void Update(GameTime gameTime)
@@ -60,7 +69,16 @@ namespace Serpent.Scenes
 			base.Update(gameTime);
 
 			if (inputManager.KeyJustPressed(Keys.Space))
-				sceneManager.ChangeScene(Game1.PLAYING_SCENE);
+			{
+				RemoveEntity(snakeSprite);
+				RemoveEntity(credit);
+				RemoveEntity(title);
+				RemoveEntity(pressSpace);
+
+			    sceneManager.ChangeScene(Game1.PLAYING_SCENE);
+			}
+
+		
 
 			timer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
 
