@@ -42,6 +42,7 @@ namespace Serpent.Scenes
 		private InputManager inputManager;
 
 		private Entity status, score, title;
+		private int scoreInt = 0;
 		private float jingleDelayTimer;
 		private bool delaySong = false;
 		private AudioAssetManager audioAssetManager;
@@ -104,8 +105,8 @@ namespace Serpent.Scenes
 
 
 			audioAssetManager.PlayMusic("Audio/serpentJingle");
-
-			
+			scoreInt = 0;
+			UpdateScore();
 		}
 
 		public override void Update(GameTime gameTime)
@@ -117,10 +118,17 @@ namespace Serpent.Scenes
 			//If the player hits a directional key when read then change to playing game state
 			if (currentGameState == GameState.Ready) 
 			{
+
+
 				foreach (var key in directionKeys)
 				{
+
+
 					if (inputManager.KeyJustPressed(key))
+					{
 						player.OnGameStateChanged(GameState.Playing);
+					}
+						
 				}
 			}
 
@@ -131,6 +139,9 @@ namespace Serpent.Scenes
 			{
 				if (inputManager.KeyJustPressed(Keys.Space))
 				{
+
+					scoreInt = 0;
+					UpdateScore();
 					player.OnGameStateChanged(GameState.Ready);
 					player.Reset();
 					RandomSpawnPellet();
@@ -147,8 +158,8 @@ namespace Serpent.Scenes
 
 			
 			//Set the score based on the number of active sections of the serpent to the number of grid areas that could be covered
-			
-				score.GetComponent<TextRenderer>().Text = $"{player.SerpentBody.Count(m => m.IsActive)} / {GridWidth*GridHeight}";
+		
+				
 
 			
 			//After a win or a loss pause the music and resume it when the win/loss jingle is finished.
@@ -200,7 +211,7 @@ namespace Serpent.Scenes
 			}
 
 			//Provide a message through the PlayerEvent Args and set the message position
-			status.GetComponent<TextRenderer>().Text = e.StastusMessage;
+			status.GetComponent<TextRenderer>().DynamicText = e.StastusMessage;
 			status.Transform.LocalPosition = new Vector2(width / 2, 24);
 		}
 
@@ -214,6 +225,7 @@ namespace Serpent.Scenes
 			
 			if (player.SerpentHead.CurrentLocation == PositionToPoint(pellet.Transform.LocalPosition))
 			{
+				UpdateScore();
 				RandomSpawnPellet();
 				audioAssetManager.PlaySoundEffect("Audio/eatPellet");
 				player.AddBodyNextCycle = true;
@@ -221,6 +233,13 @@ namespace Serpent.Scenes
 				
 		}
 
+
+		private void UpdateScore()
+		{
+		
+			scoreInt++;
+			score.GetComponent<TextRenderer>().DynamicText = $"{scoreInt} / {GridWidth * GridHeight}";
+		}
 
 		//Initializes the grid 
 		private void GameBoardInitialize()

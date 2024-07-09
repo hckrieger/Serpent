@@ -18,6 +18,7 @@ namespace Serpent.Entities
         {
             this.LoadSpriteComponents("Sprites/MainSprites", game, EntityExtensions.ColliderShape.None, new Point(48, 48));
 
+
             GetComponent<SpriteRenderer>().LayerDepth = .7f;
         }
     }

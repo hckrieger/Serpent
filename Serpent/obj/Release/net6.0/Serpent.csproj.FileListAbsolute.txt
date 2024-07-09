@@ -1,4 +1,3 @@
-C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\MonoGame.Framework.dll
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\Content\Audio\eatPellet.xnb
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\Content\Audio\lose.xnb
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\Content\Audio\serpentJingle.ogg
@@ -13,6 +12,7 @@ C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\Se
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\Serpent.runtimeconfig.json
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\Serpent.dll
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\Serpent.pdb
+C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\MonoGame.Framework.dll
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\runtimes\linux-x64\native\libSDL2-2.0.so.0
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\runtimes\linux-x64\native\libopenal.so.1
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\runtimes\osx\native\libSDL2.dylib

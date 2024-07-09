@@ -232,7 +232,6 @@ C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\wi
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\win-x64\hostfxr.dll
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\win-x64\hostpolicy.dll
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\win-x64\mscordaccore.dll
-C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\win-x64\mscordaccore_amd64_amd64_6.0.2824.12007.dll
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\win-x64\mscordbi.dll
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\win-x64\mscorrc.dll
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\win-x64\msquic.dll
@@ -251,3 +250,4 @@ C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\obj\Release\net6.0\wi
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\obj\Release\net6.0\win-x64\Serpent.pdb
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\obj\Release\net6.0\win-x64\Serpent.genruntimeconfig.cache
 C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\obj\Release\net6.0\win-x64\ref\Serpent.dll
+C:\Users\hunte\source\repos\MonoGame\games\Serpent\Serpent\bin\Release\net6.0\win-x64\mscordaccore_amd64_amd64_6.0.3124.26714.dll

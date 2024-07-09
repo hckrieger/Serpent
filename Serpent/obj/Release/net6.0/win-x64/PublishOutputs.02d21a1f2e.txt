@@ -229,7 +229,7 @@ C:\Users\hunte\MyGames\Serpent\dbgshim.dll
 C:\Users\hunte\MyGames\Serpent\hostfxr.dll
 C:\Users\hunte\MyGames\Serpent\hostpolicy.dll
 C:\Users\hunte\MyGames\Serpent\mscordaccore.dll
-C:\Users\hunte\MyGames\Serpent\mscordaccore_amd64_amd64_6.0.2824.12007.dll
+C:\Users\hunte\MyGames\Serpent\mscordaccore_amd64_amd64_6.0.3124.26714.dll
 C:\Users\hunte\MyGames\Serpent\mscordbi.dll
 C:\Users\hunte\MyGames\Serpent\mscorrc.dll
 C:\Users\hunte\MyGames\Serpent\msquic.dll

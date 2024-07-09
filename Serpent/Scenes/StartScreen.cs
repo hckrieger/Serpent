@@ -71,9 +71,9 @@ namespace Serpent.Scenes
 			if (inputManager.KeyJustPressed(Keys.Space))
 			{
 				RemoveEntity(snakeSprite);
-				RemoveEntity(credit);
-				RemoveEntity(title);
-				RemoveEntity(pressSpace);
+				RemoveEntity(credit, true);
+				RemoveEntity(title, true);
+				RemoveEntity(pressSpace, true);
 
 			    sceneManager.ChangeScene(Game1.PLAYING_SCENE);
 			}
